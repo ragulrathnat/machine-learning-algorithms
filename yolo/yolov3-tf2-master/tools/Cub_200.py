@@ -102,7 +102,7 @@ def parse_xml(xml):
 
 def main(_argv):
     class_map =open(FLAGS.classes).read().splitlines()
-    logging.info("Class mapping loaded: %s", class_map)
+    # logging.info("Class mapping loaded: %s", class_map)
 
     writer = tf.io.TFRecordWriter(FLAGS.output_file)
     # image_list = open(os.path.join(
