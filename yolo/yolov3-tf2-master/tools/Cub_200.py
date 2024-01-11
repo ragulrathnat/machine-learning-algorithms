@@ -76,7 +76,7 @@ def build_example(annotation, class_map,img_path):
         'image/object/bbox/xmax': tf.train.Feature(float_list=tf.train.FloatList(value=xmax)),
         'image/object/bbox/ymin': tf.train.Feature(float_list=tf.train.FloatList(value=ymin)),
         'image/object/bbox/ymax': tf.train.Feature(float_list=tf.train.FloatList(value=ymax)),
-        # 'image/object/class/text': tf.train.Feature(bytes_list=tf.train.BytesList(value=classes_text)),
+        'image/object/class/text': tf.train.Feature(bytes_list=tf.train.BytesList(value=classes_text)),
         # 'image/object/class/label': tf.train.Feature(int64_list=tf.train.Int64List(value=classes)),
         # 'image/object/difficult': tf.train.Feature(int64_list=tf.train.Int64List(value=difficult_obj)),
         # 'image/object/truncated': tf.train.Feature(int64_list=tf.train.Int64List(value=truncated)),
