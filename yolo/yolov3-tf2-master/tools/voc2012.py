@@ -20,6 +20,7 @@ def build_example(annotation, class_map):
     img_path = os.path.join(
         FLAGS.data_dir, 'JPEGImages', annotation['filename'])
     img_raw = open(img_path, 'rb').read()
+    print(img_raw)
     key = hashlib.sha256(img_raw).hexdigest()
 
     width = int(annotation['size']['width'])
