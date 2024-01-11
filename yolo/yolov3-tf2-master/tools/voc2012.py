@@ -20,7 +20,7 @@ def build_example(annotation, class_map):
     img_path = os.path.join(
         FLAGS.data_dir, 'JPEGImages', annotation['filename'])
     img_raw = open(img_path, 'rb').read()
-    print(img_raw)
+    # print(img_raw)
     key = hashlib.sha256(img_raw).hexdigest()
 
     width = int(annotation['size']['width'])
@@ -45,6 +45,7 @@ def build_example(annotation, class_map):
             xmax.append(float(obj['bndbox']['xmax']) / width)
             ymax.append(float(obj['bndbox']['ymax']) / height)
             classes_text.append(obj['name'].encode('utf8'))
+            print(classes_text)
             classes.append(class_map[obj['name']])
             truncated.append(int(obj['truncated']))
             views.append(obj['pose'].encode('utf8'))
