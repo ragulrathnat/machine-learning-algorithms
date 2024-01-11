@@ -58,6 +58,7 @@ def build_example(annotation, class_map,img_path):
     xmax.append(float(obj[2]) / width)
     ymax.append(float(obj[3]) / height)
     classes_text.append(class_map.encode('utf8'))
+    print(class_map.encode('utf8'))
     # classes.append(class_map[])
     # truncated.append(int(obj['truncated']))
     # views.append(obj['pose'].encode('utf8'))
