@@ -32,6 +32,7 @@ def build_example(annotation, class_map,img_path):
     img_path = os.path.join(
         FLAGS.source, 'images', img_path)
     img_raw = open(img_path, 'rb').read()
+    print(img_raw)
     # key = hashlib.sha256(img_raw).hexdigest()
 
     # width = int(annotation['size']['width'])
@@ -62,8 +63,8 @@ def build_example(annotation, class_map,img_path):
     # views.append(obj['pose'].encode('utf8'))
 
     example = tf.train.Example(features=tf.train.Features(feature={
-        'image/height': tf.train.Feature(int64_list=tf.train.Int64List(value=[height])),
-        'image/width': tf.train.Feature(int64_list=tf.train.Int64List(value=[width])),
+        # 'image/height': tf.train.Feature(int64_list=tf.train.Int64List(value=[height])),
+        # 'image/width': tf.train.Feature(int64_list=tf.train.Int64List(value=[width])),
         # 'image/filename': tf.train.Feature(bytes_list=tf.train.BytesList(value=[
         #     annotation['filename'].encode('utf8')])),
         # 'image/source_id': tf.train.Feature(bytes_list=tf.train.BytesList(value=[
@@ -118,7 +119,7 @@ def main(_argv):
         # annotation_xml = lxml.etree.fromstring(open(annotation_xml).read())
         # annotation = parse_xml(annotation_xml)['annotation']
         # print(name)
-        print(i)
+        # print(i)
         parts = img_path[i].split(' ', 1)
         result = ' '.join(parts[1:])
         tf_example = build_example(image_list[i], class_map[i],result)
