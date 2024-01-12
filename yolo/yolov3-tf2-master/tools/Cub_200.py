@@ -66,11 +66,11 @@ def build_example(annotation, class_map,img_path):
     example = tf.train.Example(features=tf.train.Features(feature={
         'image/height': tf.train.Feature(int64_list=tf.train.Int64List(value=[22,22])),
         'image/width': tf.train.Feature(int64_list=tf.train.Int64List(value=[22,22])),
-        'image/filename': tf.train.Feature(bytes_list=tf.train.BytesList(value=[22,22])),
-        'image/source_id': tf.train.Feature(bytes_list=tf.train.BytesList(value=[22,22])),
-        'image/key/sha256': tf.train.Feature(bytes_list=tf.train.BytesList(value=[22,22])),
+        'image/filename': tf.train.Feature(bytes_list=tf.train.Int64List(value=[22,22])),
+        'image/source_id': tf.train.Feature(bytes_list=tf.train.Int64List(value=[22,22])),
+        'image/key/sha256': tf.train.Feature(bytes_list=tf.train.Int64List(value=[22,22])),
         'image/encoded': tf.train.Feature(bytes_list=tf.train.BytesList(value=[img_raw])),
-        'image/format': tf.train.Feature(bytes_list=tf.train.BytesList(value=[22,22])),
+        'image/format': tf.train.Feature(bytes_list=tf.train.Int64List(value=[22,22])),
         'image/object/bbox/xmin': tf.train.Feature(float_list=tf.train.FloatList(value=xmin)),
         'image/object/bbox/xmax': tf.train.Feature(float_list=tf.train.FloatList(value=xmax)),
         'image/object/bbox/ymin': tf.train.Feature(float_list=tf.train.FloatList(value=ymin)),
@@ -79,7 +79,7 @@ def build_example(annotation, class_map,img_path):
         'image/object/class/label': tf.train.Feature(int64_list=tf.train.Int64List(value=[22,22])),
         'image/object/difficult': tf.train.Feature(int64_list=tf.train.Int64List(value=[22,22])),
         'image/object/truncated': tf.train.Feature(int64_list=tf.train.Int64List(value=[22,22])),
-        'image/object/view': tf.train.Feature(bytes_list=tf.train.BytesList(value=[22,22])),
+        'image/object/view': tf.train.Feature(bytes_list=tf.train.Int64List(value=[22,22])),
     }))
     return example
 
