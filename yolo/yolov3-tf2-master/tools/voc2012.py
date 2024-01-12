@@ -45,7 +45,7 @@ def build_example(annotation, class_map):
             xmax.append(float(obj['bndbox']['xmax']) / width)
             ymax.append(float(obj['bndbox']['ymax']) / height)
             classes_text.append(obj['name'].encode('utf8'))
-            print(classes_text)
+            # print(classes_text)
             classes.append(class_map[obj['name']])
             truncated.append(int(obj['truncated']))
             views.append(obj['pose'].encode('utf8'))
