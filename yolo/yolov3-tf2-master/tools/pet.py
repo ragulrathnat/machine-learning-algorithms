@@ -99,9 +99,9 @@ def main(_argv):
     logging.info("Image list loaded: %d", len(image_list))
     # image_list = open(os.path.join(
     #     FLAGS.data_dir, 'annotations')).read().splitlines()
-    for name in tqdm.tqdm(image_list):
-        annotation_xml = os.path.join(
-            FLAGS.data_dir, 'annotations', name + '.xml')
+    for name in image_list:
+        # annotation_xml = os.path.join(
+        #     FLAGS.data_dir, 'annotations', name + '.xml')
         annotation_xml = lxml.etree.fromstring(open(annotation_xml).read())
         annotation = parse_xml(annotation_xml)['annotation']
         tf_example = build_example(annotation, class_map)
