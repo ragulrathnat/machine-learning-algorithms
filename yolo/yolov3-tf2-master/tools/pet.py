@@ -97,8 +97,8 @@ def main(_argv):
     image_list = open(os.path.join(
         FLAGS.data_dir, 'annotations', 'xml.txt')).read().splitlines()
     logging.info("Image list loaded: %d", len(image_list))
-    image_list = open(os.path.join(
-        FLAGS.data_dir, 'annotations')).read().splitlines()
+    # image_list = open(os.path.join(
+    #     FLAGS.data_dir, 'annotations')).read().splitlines()
     for name in tqdm.tqdm(image_list):
         annotation_xml = os.path.join(
             FLAGS.data_dir, 'annotations', name + '.xml')
