@@ -52,7 +52,7 @@ def build_example(annotation, class_map,img_path):
     obj = annotation
         # difficult = bool(int(obj['difficult']))
     # difficult_obj.append(int(difficult))
-    print(obj[0]/width)
+    print(int(obj[0])/width)
     xmin.append(tf.expand_dims(float(obj[0]) / width),axis=-1)
     ymin.append(tf.expand_dims(float(obj[1]) / height),axis=-1)
     xmax.append(tf.expand_dims(float(obj[2]) / width),axis=-1)
