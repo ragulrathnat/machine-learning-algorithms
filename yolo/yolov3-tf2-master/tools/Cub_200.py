@@ -52,7 +52,7 @@ def build_example(annotation, class_map,img_path):
     obj = annotation
         # difficult = bool(int(obj['difficult']))
     # difficult_obj.append(int(difficult))
-
+    print(obj[0])
     xmin.append(float(obj[0]) / width)
     ymin.append(float(obj[1]) / height)
     xmax.append(float(obj[2]) / width)
