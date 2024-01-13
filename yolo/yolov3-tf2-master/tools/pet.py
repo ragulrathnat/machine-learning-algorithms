@@ -100,8 +100,8 @@ def main(_argv):
     # image_list = open(os.path.join(
     #     FLAGS.data_dir, 'annotations')).read().splitlines()
     for name in image_list:
-        # annotation_xml = os.path.join(
-        #     FLAGS.data_dir, 'annotations', name + '.xml')
+        annotation_xml = os.path.join(
+            FLAGS.data_dir, 'annotations','xmls', name + '.xml')
         annotation_xml = lxml.etree.fromstring(open(name).read())
         annotation = parse_xml(annotation_xml)['annotation']
         tf_example = build_example(annotation, class_map)
