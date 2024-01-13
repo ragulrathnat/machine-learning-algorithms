@@ -56,7 +56,7 @@ def build_example(annotation, class_map,img_path):
     xmin.append(tf.expand_dims(float(int(obj[0]) / width),axis=1))
     ymin.append(tf.expand_dims(float(int(obj[1]) / height),axis=1))
     xmax.append(tf.expand_dims(float(int(obj[2]) / width),axis=1))
-    ymax.append(tf.expand_dims(float(int(obj[3]) / height),axis=1)
+    ymax.append(tf.expand_dims(float(int(obj[3]) / height),axis=1))
     classes_text.append(class_map.encode('utf8'))
     # print(class_map.encode('utf8'))
     # classes.append(class_map[])
