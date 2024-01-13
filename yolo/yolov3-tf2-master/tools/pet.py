@@ -95,7 +95,7 @@ def main(_argv):
 
     writer = tf.io.TFRecordWriter(FLAGS.output_file)
     image_list = open(os.path.join(
-        FLAGS.data_dir, 'annotations', 'newxml.txt')).read().splitlines()
+        FLAGS.data_dir, 'annotations','xml_new','newxml.txt')).read().splitlines()
     logging.info("Image list loaded: %d", len(image_list))
     # image_list = open(os.path.join(
     #     FLAGS.data_dir, 'annotations')).read().splitlines()
